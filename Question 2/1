@@ -1,2 +1,5 @@
 SELECT COUNT(*) 
-FROM Customers;
+FROM [Orders]
+WHERE ShipperID = 1;
+
+Answer = 54
