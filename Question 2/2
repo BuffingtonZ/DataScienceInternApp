@@ -1,11 +1,18 @@
+--Used a With statement to create a temporary table to join Orders and Employees
 WITH Employee_Orders AS (
 SELECT *
 FROM [Orders]
 INNER JOIN [Employees]
 ON Orders.EmployeeID = Employees.EmployeeID)
 
+--Decided to only show LastName, so that you are only left with answer
 SELECT LastName
+--Taking data from the temporary table just made
 FROM [Employee_Orders]
 GROUP BY EmployeeID
+--DESC to show the most orders first
 ORDER BY COUNT(EmployeeID) DESC
+--Only shows the LastName with the most amount of ordrs
 LIMIT 1;
+
+--Answer = Peacock
