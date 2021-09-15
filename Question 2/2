@@ -1,6 +1,11 @@
-CREATE TABLE Employee_Orders AS 
+WITH Employee_Orders AS (
 SELECT *
 FROM [Orders]
 INNER JOIN [Employees]
-ON Orders.EmployeeID = Employees.EmployeeID
+ON Orders.EmployeeID = Employees.EmployeeID)
 
+SELECT LastName
+FROM [Employee_Orders]
+GROUP BY EmployeeID
+ORDER BY COUNT(EmployeeID) DESC
+LIMIT 1;
