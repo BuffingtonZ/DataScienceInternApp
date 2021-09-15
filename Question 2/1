@@ -1,5 +1,7 @@
+--Counts rows where we set the ShipperID to be 1
 SELECT COUNT(*) 
 FROM [Orders]
+--ShipperID = 1 is Speedy Express's ShipperID
 WHERE ShipperID = 1;
 
 Answer = 54
