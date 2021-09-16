@@ -1,9 +1,0 @@
-/*Since we can see that are many outlier items being sold, we would want to eliminate those outliers from skewing our data. 
-At first glace, using the median instead of the average seems like the best way of eliminating this, but when we take a closer look, 
-we can see that the only shoes selling for more than $400 all come from shop_id 78. Because of this, we will just eliminate all orders from shop_id 78. 
-
-To do this, I would use the query as follows /*
-
-SELECT AVG(decimal, order_amount) 
-FROM INTERNCHAL
-WHERE shop_id != 78 or shop_id != 42
