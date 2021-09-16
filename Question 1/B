@@ -4,6 +4,6 @@ we can see that the only shoes selling for more than $400 all come from shop_id 
 
 To do this, I would use the query as follows /*
 
-SELECT CONVERT(decimal, order_amount) 
+SELECT AVG(decimal, order_amount) 
 FROM INTERNCHAL
 WHERE shop_id != 78 or shop_id != 42
