@@ -1,11 +1,13 @@
 SELECT ProductName
 FROM Customers
+-starts a 4 table join to be able to connect all the data
 JOIN Orders
 ON Customers.CustomerID = Orders.CustomerID
 JOIN OrderDetails
 ON Orders.OrderID = OrderDetails.OrderID
 JOIN Products
 ON OrderDetails.ProductID = Products.ProductID
+--Filters to only german orders
 WHERE Country = 'Germany'
 GROUP By Products.ProductID
 ORDER BY Count(Products.ProductID) DESC
