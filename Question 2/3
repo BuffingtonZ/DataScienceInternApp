@@ -1,1 +1,12 @@
-okay
+SELECT ProductName
+FROM Customers
+JOIN Orders
+ON Customers.CustomerID = Orders.CustomerID
+JOIN OrderDetails
+ON Orders.OrderID = OrderDetails.OrderID
+JOIN Products
+ON OrderDetails.ProductID = Products.ProductID
+WHERE Country = 'Germany'
+GROUP By Products.ProductID
+ORDER BY Count(Products.ProductID) DESC
+LIMIT 1
