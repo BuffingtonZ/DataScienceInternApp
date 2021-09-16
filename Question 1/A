@@ -1,0 +1,5 @@
+SELECT CONVERT (decimal, order_amount) AS 'order amount',
+CONVERT (decimal, total_items) AS 'total items',
+convert(DECIMAL, (CONVERT(DECIMAL, order_amount) / convert(DECIMAL, total_items))) AS [Avg Cost per Item]
+FROM INTERNCHAL
+ORDER BY [Avg Cost per Item] DESC;
